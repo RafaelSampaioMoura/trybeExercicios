@@ -64,3 +64,23 @@ if (weekDay === "segunda-feira" || weekDay === "terça-feira" || weekDay === "qu
 } else if (weekDay === "sábado" || weekDay === "domingo") {
     console.log("FINALMENTE, descanso merecido UwU");
 }
+
+//==============================================================================================================================
+
+let situacao = "torta";
+
+switch (situacao) {
+    case "aprovada":
+        console.log("Parabéns, você foi aprovado!");
+        break;
+
+    case "lista":
+        console.log("Você se encontra na nossa lista de espera");
+        break;
+
+    case "reprovado":
+        console.log("Sentimos muito, mas você foi reprovado");
+        break;
+    default:
+        console.log("Não se aplica");
+}
