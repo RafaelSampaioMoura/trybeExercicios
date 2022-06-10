@@ -63,3 +63,21 @@ if(pecaXadrez.toLowerCase() === "peão") {
 } else {
     console.log("Opção inválida")
 }
+
+const nota = 70;
+
+if(nota < 50) {
+    console.log("F");
+} else if(nota <= 59) {
+    console.log("E");
+} else if(nota <= 69) {
+    console.log("D");
+} else if(nota <= 79) {
+    console.log("C");
+} else if(nota <= 89) {
+    console.log("B");
+} else if(nota <= 100) {
+    console.log("A");
+} else {
+    console.log("Error")
+}
