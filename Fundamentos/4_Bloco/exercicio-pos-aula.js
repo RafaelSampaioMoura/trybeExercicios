@@ -81,3 +81,7 @@ if(nota < 50) {
 } else {
     console.log("Error")
 }
+
+const numeroAnalizado = 8;
+
+console.log(numeroAnalizado % 2 === 0);
