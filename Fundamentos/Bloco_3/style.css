@@ -23,11 +23,42 @@ nav ul li {
   grid-area: main;
 }
 
+.float-image {
+    width: 12vw;
+    height: 14vh;
+    margin-top: 8px;
+}
+
+.ecology-image {
+    float: right;
+    height: 20vh;
+    margin-bottom: 30px;
+}
+
+.habitat-image {
+    float: left;
+    height: 15vh;
+    margin-right: 10px;
+}
+
+.claw-image {
+    float: right;
+    height: 25vh;
+    margin-left: 10px;
+}
+
+.eye-image {
+    float: right;
+    height: 30vh;
+    margin-right: 10px;
+}
+
 .sci-classification {
     float: left;
     text-align: center;
     margin-right: 0.5rem;
     border: solid black 0.4rem;
+    padding: 10px;
 }
 .footer {
   grid-area: footer;
