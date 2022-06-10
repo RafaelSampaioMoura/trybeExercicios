@@ -82,6 +82,10 @@ if(nota < 50) {
     console.log("Error")
 }
 
-const numeroAnalizado = 8;
+const numeroAnalizadoUm = 8;
+const numeroAnalizadoDois = 2;
+const numeroAnalizadoTres = 4;
 
-console.log(numeroAnalizado % 2 === 0);
+console.log(numeroAnalizadoUm % 2 === 0 || numeroAnalizadoDois % 2 ===0 || numeroAnalizadoTres % 2 === 0);
+
+console.log(numeroAnalizadoUm % 2 !== 0 || numeroAnalizadoDois % 2 !== 0 || numeroAnalizadoTres % 2 !== 0);
