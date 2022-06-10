@@ -89,3 +89,13 @@ const numeroAnalizadoTres = 4;
 console.log(numeroAnalizadoUm % 2 === 0 || numeroAnalizadoDois % 2 ===0 || numeroAnalizadoTres % 2 === 0);
 
 console.log(numeroAnalizadoUm % 2 !== 0 || numeroAnalizadoDois % 2 !== 0 || numeroAnalizadoTres % 2 !== 0);
+
+const valorDeCompra = 20;
+const valorDeVenda = 35;
+const lucro = (valorDeVenda - (valorDeCompra * 0.2)) * 1000; 
+
+if(valorDeCompra < 0 || valorDeVenda < 0) {
+    console.log("Error");
+} else {
+    console.log(lucro);
+}
