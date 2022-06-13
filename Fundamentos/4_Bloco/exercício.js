@@ -4,7 +4,7 @@ let birthYear = "1997";
 console.log(`${myName}, ${birthCity}, ${birthYear}`);
 birthYear = "2030";
 console.log(birthYear);
-birthCity = "Londres";
+//birthCity = "Londres";
 console.log(birthCity);
 
 //==============================================================================================================================
@@ -103,4 +103,9 @@ let groceryList = ['Arroz', 'Feijão', 'Alface', 'Melancia'];
 for(let i = 0; i < groceryList.length; i += 1) {
     console.log("*")
     console.log(groceryList[i]);
+}
+
+let names = ['João', 'Maria', 'Antônio', 'Margarida'];
+for(let name of names) {
+    console.log(name);
 }
