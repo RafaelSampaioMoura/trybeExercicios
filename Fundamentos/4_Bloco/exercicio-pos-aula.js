@@ -41,3 +41,13 @@ if(oddValues === 0) {
 } else {
     console.log(oddValues);
 }
+
+let smallest = numbers[0];
+
+for(number of numbers) {
+    if(smallest > number) {
+        smallest = number;
+    }
+}
+
+console.log(smallest);
