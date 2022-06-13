@@ -28,3 +28,16 @@ for(let number of numbers) {
 }
 
 console.log(biggest);
+
+let oddValues = 0;
+for(let number of numbers) {
+    if(number % 2 !==0) {
+        oddValues += 1;
+    }
+}
+
+if(oddValues === 0) {
+    console.log("Nenhum valor ímpar encontrado.")
+} else {
+    console.log(oddValues);
+}
