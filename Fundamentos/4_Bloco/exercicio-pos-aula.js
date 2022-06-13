@@ -51,3 +51,10 @@ for(number of numbers) {
 }
 
 console.log(smallest);
+
+let exampleArray = [];
+for(let i = 1; i <= 25 ; i += 1) {
+    exampleArray.push(i);
+}
+
+console.log(exampleArray);
