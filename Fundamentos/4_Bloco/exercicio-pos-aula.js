@@ -57,4 +57,14 @@ for(let i = 1; i <= 25 ; i += 1) {
     exampleArray.push(i);
 }
 
+let sumOfArray = 0;
+for (let array of exampleArray) {
+    sumOfArray += array;
+}
+
 console.log(exampleArray);
+console.log(sumOfArray);
+
+for(let array of exampleArray) {
+    console.log(array / 2);
+}
