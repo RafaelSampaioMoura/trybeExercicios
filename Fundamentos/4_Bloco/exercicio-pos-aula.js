@@ -10,3 +10,6 @@ for(let i = 0; i < numbers.length; i += 1) {
 }
 
 console.log(sum);
+
+let average = sum / numbers.length;
+console.log(average);
