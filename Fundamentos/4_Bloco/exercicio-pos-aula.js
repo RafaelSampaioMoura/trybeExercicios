@@ -13,3 +13,18 @@ console.log(sum);
 
 let average = sum / numbers.length;
 console.log(average);
+
+if(average > 20) {
+    console.log("Valor maior que 20.")
+} else {
+    console.log("Valor menor ou igual a 20.")
+}
+
+let biggest = 0;
+for(let number of numbers) {
+    if(number > biggest) {
+        biggest = number;
+    }
+}
+
+console.log(biggest);
