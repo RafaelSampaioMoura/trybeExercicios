@@ -30,3 +30,21 @@ for(let word of array) {
 
 console.log(biggest);
 console.log(smallest);
+
+let array_of_numbers = [];
+
+for(let i = 2; i <= 50; i += 1) {
+    array_of_numbers.push(i);
+}
+
+console.log(array_of_numbers);
+
+let biggest_prime_number = 1;
+
+for(let i = 0; i <= array_of_numbers.length; i += 1) {
+    if(array_of_numbers[i] % 2 !==0 && array_of_numbers[i] % 3 !== 0 && array_of_numbers % 5 !== 0 && array_of_numbers[i] % 7 !== 0 && array_of_numbers[i] > biggest_prime_number) {
+        biggest_prime_number = array_of_numbers[i];
+    }
+}
+
+console.log(biggest_prime_number);
