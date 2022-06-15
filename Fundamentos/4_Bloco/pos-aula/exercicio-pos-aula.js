@@ -8,3 +8,9 @@
 // Crie uma função que corrija o texto da tag <h1>.
 // Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
 // Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+
+const paragraph = document.getElementsByTagName("p");
+paragraph[1].innerText = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...";
+
+const mainContent = document.getElementsByClassName("main-content");
+mainContent[0].style.backgroundColor = "rgb(76,164,109)";
