@@ -14,3 +14,9 @@ paragraph[1].innerText = "Neque porro quisquam est qui dolorem ipsum quia dolor 
 
 const mainContent = document.getElementsByClassName("main-content");
 mainContent[0].style.backgroundColor = "rgb(76,164,109)";
+
+const centerContent = document.getElementsByClassName("center-content");
+centerContent[0].style.backgroundColor = "white";
+
+const title = document.getElementsByClassName("title");
+title[0].innerText = "Exercício 5.1 - JavaScript";
