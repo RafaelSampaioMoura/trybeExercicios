@@ -11,6 +11,16 @@
 
 const paragraph = document.getElementsByTagName("p");
 paragraph[1].innerText = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...";
+let tempArray = [];
+
+for(let i = 0; i < paragraph.length; i += 1) {
+    tempArray.push(paragraph[i].innerText.toUpperCase());
+}
+
+for(let i = 0; i < tempArray.length; i += 1) {
+    console.log(paragraph[i]);
+    paragraph[i].innerText = tempArray[i];
+}
 
 const mainContent = document.getElementsByClassName("main-content");
 mainContent[0].style.backgroundColor = "rgb(76,164,109)";
