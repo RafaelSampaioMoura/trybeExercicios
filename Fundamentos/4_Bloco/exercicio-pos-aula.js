@@ -137,3 +137,24 @@ function doesItRepeat(array) {
 }
 
 console.log(doesItRepeat(testNumberArrayTwo));
+
+function totalValue(N) {
+    let totalSum = 0;
+    for(let i = N; i >0; i -= 1) {
+        totalSum += i;
+    }
+    return totalSum;
+}
+
+console.log(totalValue(5));
+
+function isItTheEnding(word, ending) {
+    if(ending.length > word.length) {
+        return "Error."
+    }
+    
+    return word.endsWith(ending);
+}
+
+console.log(isItTheEnding("trybe", "be"));
+console.log(isItTheEnding("carlos", "lit"));
