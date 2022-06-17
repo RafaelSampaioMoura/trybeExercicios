@@ -17,3 +17,14 @@ const filhoDoPrimeiroFilhoDoElementoInicial = document.createElement("div");
 elementoInicial.firstElementChild.appendChild(filhoDoPrimeiroFilhoDoElementoInicial);
 
 console.log(elementoInicial.firstElementChild.firstElementChild.parentElement.parentElement.parentElement.children[2]);
+
+const pai = document.querySelector("#pai");
+let elementosDoPai = pai.querySelectorAll("section");
+console.log(elementosDoPai);
+for(let i = 0; i < elementosDoPai.length; i += 1) {
+    let element = elementosDoPai[i];
+    if(i === 1) {
+        continue;
+    }
+    pai.removeChild(element);
+}
