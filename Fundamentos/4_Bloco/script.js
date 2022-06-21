@@ -31,14 +31,22 @@
 //     console.log("Erro");
 // }
 
-const a = 9;
-const b = 8;
-const c = 7;
+// const a = 9;
+// const b = 8;
+// const c = 7;
 
-if (a > 0 && b > 0 && c > 0) {
-  console.log(a % 2 !== 0 || b % 2 !== 0 || c % 2 !== 0);
-}
+// if (a > 0 && b > 0 && c > 0) {
+//   console.log(a % 2 !== 0 || b % 2 !== 0 || c % 2 !== 0);
+// }
 
-if (a > 0 && b > 0 && c > 0) {
-  console.log(a % 2 === 0 || b % 2 === 0 || c % 2 === 0);
-}
+// if (a > 0 && b > 0 && c > 0) {
+//   console.log(a % 2 === 0 || b % 2 === 0 || c % 2 === 0);
+// }
+
+const angle_I = 60;
+const angle_II = 60;
+const angle_III = 60;
+
+if(angle_I > 0 && angle_II > 0 && angle_III > 0) {
+    console.log((angle_I + angle_II + angle_III === 180));
+};
