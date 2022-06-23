@@ -95,6 +95,17 @@ function openNewTab(e) {
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
 
+myWebpage.addEventListener("mouseenter", changeColor);
+myWebpage.addEventListener("mouseleave", originalColor);
+
+function changeColor(e) {
+    myWebpage.style.color = "red";
+}
+
+function originalColor(e) {
+    myWebpage.style.color = "white";
+}
+
 // Segue abaixo um exemplo do uso de event.target:
 
 function resetText(event) {
