@@ -11,8 +11,76 @@ const myWebpage = document.getElementById("my-spotrybefy");
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 
+const liObjects = [firstLi, secondLi, thirdLi];
+console.log(liObjects);
+
+firstLi.addEventListener("click", addTechToFirst);
+secondLi.addEventListener("click", addTechToSecond);
+thirdLi.addEventListener("click", addTechToThird);
+
+function addTechToFirst() {
+    for(let object of liObjects) {
+        if(object.className === "tech") {
+            object.className = "";
+            continue;
+        }
+    }
+    secondLi.textContent = secondLiText;
+    thirdLi.textContent = thirdLiText;
+    firstLi.className = "tech";
+}
+
+function addTechToSecond() {
+    for(let object of liObjects) {
+        if(object.className === "tech") {
+            object.className = "";
+            continue;
+        }
+    }
+    firstLi.textContent = firstLiText;
+    thirdLi.textContent = thirdLiText;
+    secondLi.className = "tech";
+}
+
+function addTechToThird() {
+    for(let object of liObjects) {
+        if(object.className === "tech") {
+            object.className = "";
+            continue;
+        }
+    }
+    secondLi.textContent = secondLiText;
+    firstLi.textContent = firstLiText;
+    thirdLi.className = "tech";
+}
+
+// for(let i = 0; i < liObjects.length; i++) {
+//     liObjects[i].addEventListener("click", addTechToLi);
+// }
+
+// function addTechToLi(e) {
+//     for(let object of liObjects) {
+//         if(object.className === "tech") {
+//             object.className = "";
+//         }
+//     }
+
+//     object.className = "tech";
+// }
+
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
+
+const firstLiText = firstLi.textContent;
+const secondLiText = secondLi.textContent;
+const thirdLiText = thirdLi.textContent;
+
+input.addEventListener("focusout", alterText);
+
+function alterText(e) {
+    const techClass = document.querySelector(".tech");
+    techClass.innerText = input.value;
+}
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
