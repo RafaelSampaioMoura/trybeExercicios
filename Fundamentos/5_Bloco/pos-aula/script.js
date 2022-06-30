@@ -28,6 +28,7 @@ const decemberDaysList = [
   21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
 ];
 
+//Cria os dias do mês
 function createDaysOfTheMonth() {
   const monthDays = document.querySelector("#days");
   for (let i = 0; i < decemberDaysList.length; i++) {
@@ -57,10 +58,12 @@ function createDaysOfTheMonth() {
 
 createDaysOfTheMonth();
 
+//Cria o botão de feriados
 function createHolidayButton() {
   const holidayBtn = document.createElement("button");
   holidayBtn.innerText = "Feriados";
   holidayBtn.id = "btn-holiday";
+  //Muda a cor de fundo dos dias de feriado
   holidayBtn.addEventListener("click", () => {
     const holiDay = document.querySelectorAll(".holiday");
     for (let i = 0; i < holiDay.length; i++) {
@@ -76,3 +79,47 @@ function createHolidayButton() {
 }
 
 createHolidayButton();
+const friDays = document.querySelectorAll(".friday");
+const fridayDate = [];
+for (let day of friDays) {
+  fridayDate.push(day.innerText);
+}
+
+//Cria botão de Sexta-Feira
+function createFridayButton() {
+  const fridayBtn = document.createElement("button");
+  fridayBtn.innerText = "Sexta-Feira";
+  fridayBtn.id = "btn-friday";
+  //Muda texto das sextas-feiras
+  fridayBtn.addEventListener("click", () => {
+    const friDays = document.querySelectorAll(".friday");
+    for (let i = 0; i < friDays.length; i++) {
+      if (friDays[i].innerText === "SEXTOU!") {
+        friDays[i].innerText = fridayDate[i];
+      } else {
+        friDays[i].innerText = "SEXTOU!";
+      }
+    }
+  });
+  const buttonContainer = document.querySelector("div.buttons-container");
+  buttonContainer.appendChild(fridayBtn);
+}
+
+createFridayButton();
+
+//Aumenta o dia no calendário
+function zoomIn(event) {
+  event.target.style.transform = "scale(1.5)";
+}
+
+//Retoran o dia no calendário ao tamanho original
+function zoomOut(event) {
+  event.target.style.transform = "scale(1.0)";
+}
+
+const monthDays = document.querySelectorAll(".day");
+for(let i = 0; i < monthDays.length; i++) {
+  monthDays[i].addEventListener("mouseover", zoomIn);
+  monthDays[i].addEventListener("mouseout", zoomOut);
+}
+
