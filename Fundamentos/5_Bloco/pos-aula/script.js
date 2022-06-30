@@ -123,3 +123,12 @@ for(let i = 0; i < monthDays.length; i++) {
   monthDays[i].addEventListener("mouseout", zoomOut);
 }
 
+const taskInput = document.querySelector("#task-input");
+const btnAdd = document.querySelector("#btn-add");
+//Adiciona compromissos
+btnAdd.addEventListener("click", () => {
+  const task = document.createElement("span");
+  task.innerText = taskInput.value + "\n";
+  const taskContainer = document.querySelector(".my-tasks");
+  taskContainer.appendChild(task);
+})
