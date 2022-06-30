@@ -8,103 +8,69 @@ const myWebpage = document.getElementById("my-spotrybefy");
 // 1.1. Antes de começar os exercícios, use o LiveServer para dar uma olhada em como está a página no navegador.
 // 1.2. Note que uma das caixas está um pouco acima das outras. Por que isso ocorre?
 
+
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 
-const liObjects = [firstLi, secondLi, thirdLi];
-console.log(liObjects);
+const liArray = [firstLi, secondLi, thirdLi];
 
-firstLi.addEventListener("click", addTechToFirst);
-secondLi.addEventListener("click", addTechToSecond);
-thirdLi.addEventListener("click", addTechToThird);
-
-function addTechToFirst() {
-    for(let object of liObjects) {
-        if(object.className === "tech") {
-            object.className = "";
-            continue;
-        }
-    }
-    secondLi.textContent = secondLiText;
-    thirdLi.textContent = thirdLiText;
+firstLi.addEventListener("click", () => {
     firstLi.className = "tech";
-}
+    secondLi.className = "";
+    thirdLi.className = "";
+})
 
-function addTechToSecond() {
-    for(let object of liObjects) {
-        if(object.className === "tech") {
-            object.className = "";
-            continue;
-        }
-    }
-    firstLi.textContent = firstLiText;
-    thirdLi.textContent = thirdLiText;
+secondLi.addEventListener("click", () => {
+    firstLi.className = "";
     secondLi.className = "tech";
-}
+    thirdLi.className = "";
+})
 
-function addTechToThird() {
-    for(let object of liObjects) {
-        if(object.className === "tech") {
-            object.className = "";
-            continue;
-        }
-    }
-    secondLi.textContent = secondLiText;
-    firstLi.textContent = firstLiText;
+thirdLi.addEventListener("click", () => {
+    firstLi.className = "";
+    secondLi.className = "";
     thirdLi.className = "tech";
-}
+})
 
-// for(let i = 0; i < liObjects.length; i++) {
-//     liObjects[i].addEventListener("click", addTechToLi);
-// }
-
-// function addTechToLi(e) {
-//     for(let object of liObjects) {
-//         if(object.className === "tech") {
-//             object.className = "";
+// for(let i = 0; i < liArray.length; i++) {
+//     liArray[i].addEventListener("click", () => {
+//         if(liArray[i].className === "tech") {
+//             liArray[i].className = "";
+//         } else {
+//             liArray[i].className = "tech";
 //         }
-//     }
-
-//     object.className = "tech";
+//     })
 // }
+
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 
-const firstLiText = firstLi.textContent;
-const secondLiText = secondLi.textContent;
-const thirdLiText = thirdLi.textContent;
-
-input.addEventListener("focusout", alterText);
-
-function alterText(e) {
-    const techClass = document.querySelector(".tech");
-    techClass.innerText = input.value;
-}
+input.addEventListener("input", () => {
+    const tech = document.querySelector(".tech");
+    tech.innerText = input.value;
+})
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portfólio?
 
-myWebpage.addEventListener("dblclick", openNewTab);
-
-function openNewTab(e) {
-    window.open("https://github.com/RafaelSampaioMoura", '_blank');
+for(let li of liArray) {
+    li.addEventListener("dblclick", () => {
+        window.open("https://github.com/RafaelSampaioMoura","_blank");
+    })
 }
 
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
 
-myWebpage.addEventListener("mouseenter", changeColor);
-myWebpage.addEventListener("mouseleave", originalColor);
+myWebpage.addEventListener("mouseover", () => {
+    myWebpage.style.color = "yellowgreen";
+})
 
-function changeColor(e) {
-    myWebpage.style.color = "red";
-}
-
-function originalColor(e) {
+myWebpage.addEventListener("mouseleave", () => {
     myWebpage.style.color = "white";
-}
+})
 
 // Segue abaixo um exemplo do uso de event.target:
 
