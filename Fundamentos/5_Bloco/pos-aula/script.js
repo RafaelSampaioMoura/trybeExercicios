@@ -23,19 +23,31 @@ createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
 
-const decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+const decemberDaysList = [
+  29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+];
 
 function createDaysOfTheMonth() {
   const monthDays = document.querySelector("#days");
-  for(let i = 0; i < decemberDaysList.length; i++) {
+  for (let i = 0; i < decemberDaysList.length; i++) {
     const day = document.createElement("li");
     day.innerText = decemberDaysList[i];
     day.classList.add("day");
-    if(decemberDaysList[i] === 24 || decemberDaysList[i] === 25 || decemberDaysList[i] === 31) {
+    if (
+      decemberDaysList[i] === 24 ||
+      decemberDaysList[i] === 25 ||
+      decemberDaysList[i] === 31
+    ) {
       day.classList.add("holiday");
     }
 
-    if(decemberDaysList[i] === 4 || decemberDaysList[i] === 11 || decemberDaysList[i] === 18 || decemberDaysList[i] === 25) {
+    if (
+      decemberDaysList[i] === 4 ||
+      decemberDaysList[i] === 11 ||
+      decemberDaysList[i] === 18 ||
+      decemberDaysList[i] === 25
+    ) {
       day.classList.add("friday");
     }
 
@@ -47,8 +59,18 @@ createDaysOfTheMonth();
 
 function createHolidayButton() {
   const holidayBtn = document.createElement("button");
-  holidayBtn.innerText = "Feriados"
+  holidayBtn.innerText = "Feriados";
   holidayBtn.id = "btn-holiday";
+  holidayBtn.addEventListener("click", () => {
+    const holiDay = document.querySelectorAll(".holiday");
+    for (let i = 0; i < holiDay.length; i++) {
+      if (holiDay[i].style.backgroundColor === "yellowgreen") {
+        holiDay[i].style.backgroundColor = "rgb(238,238,238)";
+      } else {
+        holiDay[i].style.backgroundColor = "yellowgreen";
+      }
+    }
+  });
   const buttonContainer = document.querySelector("div.buttons-container");
   buttonContainer.appendChild(holidayBtn);
 }
