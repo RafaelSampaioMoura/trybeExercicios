@@ -118,17 +118,61 @@ function zoomOut(event) {
 }
 
 const monthDays = document.querySelectorAll(".day");
-for(let i = 0; i < monthDays.length; i++) {
+for (let i = 0; i < monthDays.length; i++) {
   monthDays[i].addEventListener("mouseover", zoomIn);
   monthDays[i].addEventListener("mouseout", zoomOut);
 }
 
 const taskInput = document.querySelector("#task-input");
 const btnAdd = document.querySelector("#btn-add");
-//Adiciona compromissos
-btnAdd.addEventListener("click", () => {
+
+//Cria os compromissos
+btnAdd.addEventListener("click", addTask);
+const textInput = document.getElementById("task-input");
+
+taskInput.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+      document.getElementById("btn-add").click();
+    }
+  });
+
+function addTask() {
   const task = document.createElement("span");
-  task.innerText = taskInput.value + "\n";
+  if (taskInput.input === "") {
+    alert("Não é possível adicionar uma tarefa vazia;");
+  } else {
+    task.innerText = taskInput.value + "\n";
+    addColor("red", task);
+  }
+}
+
+const daysList = document.querySelectorAll(".day");
+
+//Adiciona compromissos com legenda
+function addColor(cor, element) {
+  const color = document.createElement("div");
+  color.classList.add("task");
+  color.style.backgroundColor = cor;
+  color.appendChild(element);
+  //Adiciona a classe "selected"
+  color.addEventListener("click", () => {
+    if (color.classList.contains("selected")) {
+      color.classList.remove("selected");
+    } else {
+      color.classList.add("selected");
+      for (let day of daysList) {
+        day.addEventListener("click", () => {
+          if (day.style.color === color.style.backgroundColor) {
+            day.style.color = "rgb(119,119,119)";
+          } else {
+            day.style.color = color.style.backgroundColor;
+          }
+        });
+      }
+    }
+  });
   const taskContainer = document.querySelector(".my-tasks");
-  taskContainer.appendChild(task);
-})
+  const breakLine = document.createElement("br");
+  taskContainer.appendChild(color);
+  taskContainer.appendChild(breakLine);
+}

@@ -14,6 +14,10 @@ const myWebpage = document.getElementById("my-spotrybefy");
 
 const liArray = [firstLi, secondLi, thirdLi];
 
+const textLiFirst = firstLi.innerText;
+const textLiSecond = secondLi.innerText;
+const textThird = thirdLi.innerText;
+
 firstLi.addEventListener("click", () => {
     firstLi.className = "tech";
     secondLi.className = "";
