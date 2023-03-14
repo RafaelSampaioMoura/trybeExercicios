@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validação</title>
+  </head>
+  <body>
+    <div>
+      <form>
+        Validador de Campos
+        <label for="texto-para-validar"
+          ><input type="text" id="texto-para-validar" name="texto-para-validar"
+        /></label>
+        <div class="validation">
+          <button type="button" class="validation-btn"></button>
+          <div class="validation-options">
+            <a href="cpf">CPF</a>
+            <a href="email">Email</a>
+            <a href="rg">RG</a>
+            <a href="usuario">Usuário</a>
+            <a href="Senha">Senha</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div>Resultado da Validação</div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
