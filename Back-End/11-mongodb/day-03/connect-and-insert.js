@@ -36,4 +36,30 @@ db.movies.find(
   { title: 1, ratings: 1, category: 1 }
 );
 
-db.movies.find({category: {$size: 2}});
+db.movies.find({ category: { $size: 2 } });
+db.movies.find({ ratings: { $size: 4 } }, { title: 1 });
+db.movies.find({
+  $and: [{ budget: { $mod: [5, 0] } }, { category: { $size: 2 } }],
+});
+
+db.movies.find(
+  {
+    $or: [
+      { category: { $in: ["sci-fi"] } },
+      { rating: { $elemMatch: { $gt: 199 } } },
+    ],
+  },
+  { _id: 0, title: 1, ratings: 1, category: 1 }
+);
+
+db.movies.find({
+  $and: [
+    { ratings: { $size: 4 } },
+    { category: { $in: ["adventure", "family"] } },
+    { imdbRating: { $not: { $lt: 7 } } },
+  ],
+});
+
+db.movies.find({ description: { $regex: /^The/ } });
+db.movies.find({ description: { $regex: /humanity.$/ } });
+db.movies.find({ $expr: { $lt: ["budget", "grossWorldwide"] } });
