@@ -1,4 +1,4 @@
-db = connect("mongodb://localhost/bookstore");
+db = connect("mongodb://localhost:27017");
 
 db.bios.find({ _id: 8 });
 db.bios.find({ _id: 8 }, { _id: 1, name: 1 });

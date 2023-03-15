@@ -1,4 +1,4 @@
-db = connect("mongodb://localhost/cinema");
+db = connect("mongodb://localhost:27017");
 
 db.movies.insertMany([
   {

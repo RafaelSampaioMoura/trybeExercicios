@@ -1,4 +1,4 @@
-db = connect("mongodb://localhost/bookstore");
+db = connect("mongodb://localhost:27017");
 
 db.superheroes.find({ "aspects.height": { $lt: 180 } });
 db.superheroes.find({ "aspects.height": { $lte: 180 } }).count();
